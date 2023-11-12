@@ -17,7 +17,7 @@ class MyApp extends StatelessWidget {
         '/noticias': (context) => NoticiasPage(),
         '/cambioMoneda': (context) => CambioMonedaPage(),
         '/listaTareas': (context) => ListaTareasPage(),
-        '/podcast': (context) => PodcastPage(),
+        '/podcast': (context) => PodcastApp(),
       },
     );
   }
@@ -320,16 +320,92 @@ class TareaCard extends StatelessWidget {
   }
 }
 
+class Podcast {
+  final String titulo;
+  final String artista;
+  final String imagenUrl;
 
-class PodcastPage extends StatelessWidget {
+  Podcast({
+    required this.titulo,
+    required this.artista,
+    required this.imagenUrl,
+  });
+}
+
+class PodcastApp extends StatelessWidget {
+  final List<Podcast> podcasts = [
+    Podcast(
+      titulo: 'El podcast de Flutter',
+      artista: 'Bard',
+      imagenUrl:
+          'https://www.definicionabc.com/contenido/imp/musica.jpg',
+    ),
+    Podcast(
+      titulo: 'El podcast de programación',
+      artista: 'Coder',
+      imagenUrl:
+          'https://www.definicionabc.com/contenido/imp/musica.jpg',
+    ),
+    Podcast(
+      titulo: 'El podcast de tecnología',
+      artista: 'Techno',
+      imagenUrl:
+          'https://www.definicionabc.com/contenido/imp/musica.jpg',
+    ),
+  ];
+
   @override
   Widget build(BuildContext context) {
-    return Scaffold(
-      appBar: AppBar(
-        title: Text('Podcast'),
+    return MaterialApp(
+      home: Scaffold(
+        appBar: AppBar(
+          title: Text('Lista de Podcasts'),
+        ),
+        body: ListView.builder(
+          itemCount: podcasts.length,
+          itemBuilder: (context, index) {
+            return PodcastWidget(podcast: podcasts[index]);
+          },
+        ),
       ),
-      body: Center(
-        child: Text('Esta es la página del podcast'),
+    );
+  }
+}
+
+class PodcastWidget extends StatelessWidget {
+  final Podcast podcast;
+
+  PodcastWidget({required this.podcast});
+
+  @override
+  Widget build(BuildContext context) {
+    return Container(
+      padding: const EdgeInsets.all(8.0),
+      child: Row(
+        children: [
+          Container(
+            width: 100.0,
+            height: 100.0,
+            child: Image.network(podcast.imagenUrl),
+          ),
+          SizedBox(width: 16.0),
+          Expanded(
+            child: Column(
+              crossAxisAlignment: CrossAxisAlignment.start,
+              mainAxisAlignment: MainAxisAlignment.center,
+              children: [
+                Text(
+                  podcast.titulo,
+                  style: TextStyle(fontSize: 20.0),
+                ),
+                Text(
+                  podcast.artista,
+                  style: TextStyle(fontSize: 16.0),
+                ),
+              ],
+            ),
+          ),
+        ],
       ),
     );
   }
