@@ -42,11 +42,11 @@ class PodcastApp extends StatelessWidget {
             imagenUrl:
                 'https://media.revistagq.com/photos/5f992c10721a385494d12b6a/1:1/w_1080,h_1080,c_limit/november.png',
           ),
-          SizedBox(height: 24.0), // Aumenta el espacio entre la tarjeta y los controles de audio
+          SizedBox(height: 24.0), 
           AudioControls(),
-          SizedBox(height: 24.0), // Aumenta el espacio entre los controles de audio y la barra de progreso
+          SizedBox(height: 24.0), 
           AudioProgressBar(),
-          SizedBox(height: 24.0), // Aumenta el espacio entre la barra de progreso y las opciones de audio
+          SizedBox(height: 24.0), 
           AudioOptions(),
         ],
       ),
@@ -73,27 +73,27 @@ class PodcastCard extends StatelessWidget {
         borderRadius: BorderRadius.circular(12.0),
       ),
       child: Padding(
-        padding: const EdgeInsets.all(24.0), // Aumenta el espacio dentro de la tarjeta
+        padding: const EdgeInsets.all(24.0), 
         child: Column(
           mainAxisAlignment: MainAxisAlignment.spaceBetween,
           children: [
             Row(
               children: [
                 CircleAvatar(
-                  radius: 40.0, // Aumenta el tamaño del avatar
+                  radius: 40.0, 
                   backgroundImage: NetworkImage(imagenUrl),
                 ),
-                SizedBox(width: 32.0), // Aumenta el espacio entre el avatar y el texto
+                SizedBox(width: 32.0),
                 Column(
                   crossAxisAlignment: CrossAxisAlignment.start,
                   children: [
                     Text(
                       artista,
-                      style: TextStyle(fontSize: 18.0), // Aumenta el tamaño del texto
+                      style: TextStyle(fontSize: 18.0), 
                     ),
                     Text(
                       musica,
-                      style: TextStyle(fontSize: 16.0), // Aumenta el tamaño del texto
+                      style: TextStyle(fontSize: 16.0), 
                     ),
                   ],
                 ),
@@ -110,24 +110,24 @@ class AudioControls extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Container(
-      padding: EdgeInsets.all(24.0), // Aumenta el espacio alrededor de los botones de control de audio
+      padding: EdgeInsets.all(24.0), 
       child: Row(
         mainAxisAlignment: MainAxisAlignment.spaceEvenly,
         children: [
           IconButton(
             icon: Icon(Icons.skip_previous),
             onPressed: () {},
-            iconSize: 50.0, // Aumenta el tamaño del icono
+            iconSize: 50.0, 
           ),
           IconButton(
             icon: Icon(Icons.play_arrow),
             onPressed: () {},
-            iconSize: 120.0, // Aumenta el tamaño del icono
+            iconSize: 120.0, 
           ),
           IconButton(
             icon: Icon(Icons.fast_forward),
             onPressed: () {},
-            iconSize: 50.0, // Aumenta el tamaño del icono
+            iconSize: 50.0, 
           ),
         ],
       ),
@@ -143,14 +143,14 @@ class AudioProgressBar extends StatelessWidget {
       child: Column(
         children: [
           LinearProgressIndicator(
-            value: 0.5, // Coloca aquí el valor de la barra de progreso (0.0 - 1.0)
+            value: 0.5, 
           ),
           SizedBox(height: 16.0),
           Row(
             mainAxisAlignment: MainAxisAlignment.spaceBetween,
             children: [
-              Text('1:45', style: TextStyle(fontSize: 14.0)), // Aumenta el tamaño del texto
-              Text('3:45', style: TextStyle(fontSize: 14.0)), // Aumenta el tamaño del texto
+              Text('1:45', style: TextStyle(fontSize: 14.0)), 
+              Text('3:45', style: TextStyle(fontSize: 14.0)), 
             ],
           ),
         ],
@@ -175,18 +175,17 @@ class AudioOptions extends StatelessWidget {
                   Checkbox(
                     value: true,
                     onChanged: (value) {
-                      // Implementa la lógica de repetición aquí
                     },
                   ),
                   SizedBox(width: 8.0),
                   Text('Repeat', style: TextStyle(fontSize: 16.0)),
                 ],
               ),
-              Spacer(), // Añade un espacio flexible entre Repeat y Shuffle
+              Spacer(), 
             ],
           ),
           SizedBox(height: 8.0),
-          Divider(thickness: 4.0), // Ajusta el grosor de la línea debajo de Repeat
+          Divider(thickness: 4.0), 
           SizedBox(height: 8.0),
           Row(
             mainAxisAlignment: MainAxisAlignment.spaceBetween,
@@ -196,18 +195,17 @@ class AudioOptions extends StatelessWidget {
                   Checkbox(
                     value: false,
                     onChanged: (value) {
-                      // Implementa la lógica de shuffle aquí
                     },
                   ),
                   SizedBox(width: 8.0),
                   Text('Shuffle', style: TextStyle(fontSize: 16.0)),
                 ],
               ),
-              Spacer(), // Añade un espacio flexible entre Shuffle y el borde de la pantalla
+              Spacer(), 
             ],
           ),
           SizedBox(height: 8.0),
-          Divider(thickness: 4.0), // Ajusta el grosor de la línea debajo de Shuffle
+          Divider(thickness: 4.0),
         ],
       ),
     );

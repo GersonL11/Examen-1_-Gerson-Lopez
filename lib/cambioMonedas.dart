@@ -38,7 +38,6 @@ class _CambioMonedasPageState extends State<CambioMonedaPage> {
               onChanged: (String? newValue) {
                 setState(() {
                   _monedaSeleccionada = newValue ?? 'Euro';
-                  // Puedes ajustar estos valores según tus necesidades reales.
                   _actualizarPrecios();
                 });
               },
@@ -83,7 +82,6 @@ class _CambioMonedasPageState extends State<CambioMonedaPage> {
   }
 
   void _actualizarPrecios() {
-    // Puedes ajustar estos valores según tus necesidades reales.
     if (_monedaSeleccionada == 'Euro') {
       _precioCompraEuro = 1.08;
       _precioVentaEuro = 1.12;

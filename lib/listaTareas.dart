@@ -14,17 +14,34 @@ class ListaTareasPage extends StatelessWidget {
           TareaCard(
             nombre: 'Gerson Lopez',
             descripcion: 'Realizar la presentación del proyecto',
-            fecha: '31 de octubre, 2023',
-            url: 'https://example.com',
+            fecha: '4 de octubre,2023',
           ),
           SizedBox(height: 16.0),
           TareaCard(
-            nombre: 'Juan Pérez',
+            nombre: 'Gerson Lopez',
             descripcion: 'Investigar sobre inteligencia artificial',
-            fecha: '5 de noviembre, 2023',
-            url: 'https://example.com',
+            fecha: '5 de noviembre,2023',
           ),
-          // Agrega más ejemplos según sea necesario
+          TareaCard(
+            nombre: 'Gerson Lopez',
+            descripcion: 'Completar prueba en linea 2 Fisica',
+            fecha: '5 de noviembre,2023',
+          ),
+          TareaCard(
+            nombre: 'Gerson Lopez',
+            descripcion: 'Comentar o participar en foro de Literatura',
+            fecha: '23 de noviembre,2023',
+          ),
+          TareaCard(
+            nombre: 'Gerson Lopez',
+            descripcion: 'Realizar reposicion de examen Fisica',
+            fecha: '28 de noviembre,2023',
+          ),
+          TareaCard(
+            nombre: 'Gerson Lopez',
+            descripcion: 'Investigar sobre el cambio climatico',
+            fecha: '30 de noviembre,2023',
+          ),
         ],
       ),
     );
@@ -35,13 +52,11 @@ class TareaCard extends StatelessWidget {
   final String nombre;
   final String descripcion;
   final String fecha;
-  final String url;
 
   const TareaCard({
     required this.nombre,
     required this.descripcion,
     required this.fecha,
-    required this.url,
   });
 
   @override
